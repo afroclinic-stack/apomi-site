@@ -1,0 +1,129 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>予約管理ソフトの対応状況｜apomi</title>
+<style>
+ :root{--mint:#eefaf6;--green-d:#1f7d5e;--leaf:#7cc6a6;--ink:#274b40;--line:#cfe8dd;
+       --amber:#e2953b;--warm:#fff8ec;}
+ *{box-sizing:border-box}
+ body{font-family:-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+   color:var(--ink);margin:0;line-height:1.9;background:#fff}
+ .wrap{max-width:860px;margin:0 auto;padding:24px 18px 70px}
+ h1{font-size:23px;color:var(--green-d);border-left:6px solid var(--leaf);padding-left:12px}
+ h2{font-size:17.5px;color:var(--green-d);margin:34px 0 10px;border-bottom:2px solid var(--line);
+   padding-bottom:5px}
+ p,li,td,th{font-size:14.5px}
+ .lead{background:var(--mint);border:1.5px solid var(--line);border-radius:12px;
+   padding:14px 18px;margin:16px 0}
+ .cond{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:4px 18px 12px;margin:12px 0}
+ .cond ol{padding-left:22px;margin:10px 0}
+ .cond li{margin:8px 0}
+ .cond b{color:var(--green-d)}
+ table{border-collapse:collapse;width:100%;margin:12px 0}
+ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+ th{background:var(--mint);white-space:nowrap}
+ .mk{font-size:12.5px;color:#7c968c}
+ .b1{color:#1f7d5e;font-weight:700;white-space:nowrap}
+ .b2{color:#c07a1b;font-weight:700;white-space:nowrap}
+ .b3{color:#7c968c;font-weight:700;white-space:nowrap}
+ .cta{background:var(--warm);border:2px solid var(--amber);border-radius:14px;
+   padding:16px 20px;margin:22px 0}
+ .cta b{color:#a4670f}
+ .note{font-size:12.5px;color:#7c968c;margin-top:26px;line-height:1.85;
+   border-top:1px dashed var(--line);padding-top:14px}
+ .scroll{overflow-x:auto}
+ .back{margin-top:30px;font-size:14px}
+ .back a{color:var(--green-d)}
+ code{background:#f1f6f4;border-radius:4px;padding:1px 6px;font-size:13px}
+</style></head><body><div class="wrap">
+
+<h1>ご利用の予約管理ソフトと apomi の対応状況</h1>
+
+<div class="lead">apomiは、<b>予約管理ソフトが書き出したファイルを読んで</b>チェックします。
+そのため、<b>何がどこまでできるかは、お使いのソフトの書き出し方によって変わります</b>。<br>
+このページは、<b>そのままの状態</b>を公開するためのものです。できないことも書いています。</div>
+
+<h2>apomiが力を出せる条件（4つ）</h2>
+<div class="cond"><ol>
+<li><b>予約一覧を書き出せること</b><br>
+  CSV・Excel・PDF のいずれかで出せれば大丈夫です。</li>
+<li><b>ユニット（チェア）の情報が入っていること</b><br>
+  <b>ここがいちばん重要です。</b>「何台のうち何台が埋まっているか」が分からないと、
+  apomiの中心である<b>空き枠・埋まり率のチェックができません</b>。<br>
+  <span class="mk">担当者だけが書き出される形式だと、「誰が忙しいか」は分かっても「診療台が空いているか」は分かりません。</span></li>
+<li><b>一定の期間をまとめて書き出せること</b><br>
+  何日先まで見られるかは、まとめて出せる日数で決まります。1日ずつしか出せない場合、
+  チェックできるのもその1日だけになります。</li>
+<li><b>患者番号（カルテ番号）が入っていること</b><br>
+  同じ患者さんの二重予約や、同じ日の重複を見分けるのに使います。
+  お名前だけでも動きますが、同姓同名で取り違える可能性があります。</li>
+</ol></div>
+
+<h2>いまの対応状況</h2>
+<p>表の見方：<span class="b1">◎ 検証済み</span>＝実際の書き出しファイルで動作を確認しました　／
+<span class="b2">△ 一部のみ</span>＝読み取れますが、できないことがあります　／
+<span class="b3">? 未検証</span>＝まだ実物を拝見していません</p>
+
+<div class="scroll">
+<table>
+<tr><th>予約管理ソフト</th><th>状況</th><th>確認した書き出し</th><th>わかっていること</th></tr>
+
+<tr><td><b>Genifix</b><br><span class="mk">株式会社モリタ</span></td>
+  <td class="b1">◎ 検証済み</td>
+  <td>予約一覧の印刷PDF</td>
+  <td>すべての機能が使えます。開発元の歯科医院で<b>毎日稼働中</b>です。</td></tr>
+
+<tr><td><b>Apotool &amp; Box</b><br><span class="mk">アポツール</span></td>
+  <td class="b1">◎ 検証済み</td>
+  <td>予約表Excel（グリッド形式）<br>予約一覧CSV<br>シフト表</td>
+  <td>すべての機能が使えます。シフト表の取り込み、日毎メモからの「◯◯有給」の自動読み取り、
+    「予約を入れない枠」の除外にも対応しています。</td></tr>
+
+<tr><td><b>EPARK歯科台帳</b><br><span class="mk">株式会社EPARK</span></td>
+  <td class="b2">検証中</td>
+  <td>予約表の印刷PDF<br><span class="mk">（Excel書き出しは未確認）</span></td>
+  <td>印刷PDFからは、予約の読み取りと担当者の重なりのチェックまで確認できました。
+    一方この書き出しには<b>ユニットの情報が含まれていない</b>ため、空き枠・埋まり率は出せません。<br>
+    <b>Excelでの書き出しはまだ拝見していません。</b>そちらに必要な情報があれば、
+    できることが増える可能性があります。</td></tr>
+
+<tr><td><b>上記以外のソフト</b></td>
+  <td class="b3">? 未検証</td>
+  <td>—</td>
+  <td>まだ実物の書き出しファイルを拝見していません。<b>下記のとおり、無料で判定します。</b></td></tr>
+</table>
+</div>
+
+<p class="mk">未検証のソフト（一例）：WiseStaff・palette・DOC-5 PROCYON・Opt.one・POWER5G・
+Hi Dental Spirit・iQalte・With・ジュレア・Dentis・Sunny-XROSS・デンタマッププラス・
+デントネット・APOMARU・DESK・レジタス・V-apo・デンタルアクセス・Ci Easy Apo2・
+PROGRAMα・予約Premium・トルシカ　ほか</p>
+
+<div class="cta">
+<b>📩 お使いのソフトが表にない／「検証中」になっている場合</b><br>
+書き出したファイルを1つ<b>お送りいただければ、無料で判定してお返しします</b>
+（費用はかかりません。ご契約の必要もありません）。<br><br>
+送り先：<b>apomi.dental@gmail.com</b>　／　お返事の目安：<b>2営業日以内</b><br>
+<span class="mk">※ 患者さんのお名前は、分かる範囲で消してからお送りください。
+お預かりしたファイルは判定が済み次第、削除します。</span><br><br>
+判定の結果、<b>apomiでは力を発揮できないと分かった場合は、その旨を正直にお伝えします。</b>
+無理にお勧めすることはありません。
+</div>
+
+<h2>「できない」とお伝えすることについて</h2>
+<p>apomiは、すべての予約管理ソフトで同じように動くわけではありません。
+相性の良し悪しは、どうしても出ます。</p>
+<p>そのため、<b>導入前に「このソフトではここができません」とお伝えする</b>ことにしています。
+使い始めてから「思っていたのと違った」となるほうが、お互いにとって不幸だからです。</p>
+
+<div class="note">
+・この表は、<b>apomiが読み取れるかどうかの判定結果</b>であり、予約管理ソフトそのものの
+優劣を示すものではありません。それぞれのソフトには、apomiとは別の目的と長所があります。<br>
+・判定は、こちらで実際に拝見した<b>特定の書き出し形式についてのもの</b>です。
+同じソフトでも、別の書き出し方であれば結果が変わることがあります。<br>
+・各ソフトの仕様は変わることがあります。情報が古くなっていましたら、お知らせいただけると助かります。<br>
+・製品名・会社名は各社の商標です。当方はいずれのメーカーとも資本関係・提携関係にありません。<br>
+・最終更新：2026年8月21日
+</div>
+
+<div class="back"><a href="index.html">← apomi トップページへ戻る</a></div>
+</div></body></html>
