@@ -63,12 +63,19 @@
     <b>インストール作業も、むずかしい準備も要りません。</b></div>
 </div>
 
-<h2><span class="n">1</span>はじめかた（3ステップ）</h2>
+<h2><span class="n">1</span>はじめかた（4ステップ）</h2>
 <ol class="steps">
+  <li><span class="big">ダウンロードしたzipを「すべて展開」する</span>
+      <div class="sub"><b>ここを飛ばさないでください。</b>
+        zipのまま中のapomi.exeを開くと、
+        「ほかの圧縮ファイルに依存している可能性があります」という別の警告が出て、うまく動きません。<br>
+        <b>やり方</b>：apomi_windows.zip を<b>右クリック</b> →
+        <b>「すべて展開」</b> → <b>「展開」</b>。できたフォルダを開いてください。</div></li>
   <li><span class="big">apomi.exe をダブルクリック</span>
-      <div class="sub">このフォルダの中にあります。</div></li>
+      <div class="sub">展開したフォルダの中にあります。</div></li>
   <li><span class="big">青い警告が出たら「詳細情報」→「実行」</span>
-      <div class="sub">こわい画面ですが、故障でもウイルスでもありません。下でくわしく説明します。</div></li>
+      <div class="sub"><b>「実行しない」しかボタンが無いように見えますが、あわてないでください。</b>
+        下でくわしく説明します。</div></li>
   <li><span class="big">「ようこそ」画面が出たら完了！</span>
       <div class="sub">デスクトップに「apomi_取込」と「アポチェック」ができます。</div></li>
 </ol>
@@ -80,16 +87,35 @@
     この確認を出さないようにするには、開発者が毎年お金を払って「身分証明書」を買う必要があります。
     apomi はまだ購入していないため出ますが、<b>中身が危険という意味ではありません。</b></p>
 
+  <p class="sub"><b>いちばん間違えやすいところ：</b>
+    最初の画面には <b>「実行しない」しかボタンがありません。</b>
+    ここで押してしまうと、インストールが終わってしまいます。<br>
+    <b>押すのは、その上にある小さな青い文字「詳細情報」です。</b></p>
+
   <div class="mock">
     <div class="t">WindowsによってPCが保護されました</div>
-    <div>Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました。</div>
-    <div style="margin-top:8px"><span class="link">詳細情報</span> ← ①まずココを押す（小さい文字です）</div>
-    <div><span class="btn">実行</span> ← ②押すと出てくるので、これをクリック</div>
+    <div>Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました。
+      このアプリを実行すると、PC が危険にさらされる可能性があります。</div>
+    <div style="margin-top:8px"><span class="link">詳細情報</span>
+      ← <b>①まずココ！</b>（小さい青い文字です。見落としやすい）</div>
+    <div style="margin-top:6px; text-align:right"><span class="btn">実行しない</span>
+      ← <b>まだ押さないでください</b></div>
+  </div>
+
+  <p class="sub">「詳細情報」を押すと、下に <b>「アプリ: apomi.exe」「発行元: 不明な発行元」</b>
+    と表示され、<b>「実行」ボタンが新しく出てきます</b>。</p>
+
+  <div class="mock">
+    <div class="t">WindowsによってPCが保護されました</div>
+    <div>アプリ: apomi.exe　／　発行元: 不明な発行元</div>
+    <div style="margin-top:6px; text-align:right"><span class="btn">実行</span>
+      ← <b>②これを押す</b>　<span class="btn">実行しない</span></div>
   </div>
 
   <p class="sub" style="margin-bottom:0">
-    ポイントは <b>「詳細情報」を先に押すこと</b>。押さないと「実行」ボタンが出てきません。<br>
-    2回目からは表示されません。（新しい版に入れ替えたときは、もう一度だけ出ます）</p>
+    2回目からは表示されません。（新しい版に入れ替えたときは、もう一度だけ出ます）<br>
+    <b>それでも不安なときは、遠慮なくお電話ください。</b>
+    050-1809-0279（平日10:00〜16:00）／ apomi.dental@gmail.com</p>
 </div>
 
 <h2><span class="n">2</span>毎日の使いかた</h2>
@@ -100,6 +126,15 @@
       <div class="sub">パソコンを起動すると自動で見張りが始まるので、毎回の操作は要りません。</div></li>
 </ol>
 <div class="tip">💡 すぐ調べたいときは、デスクトップの <b>「アポチェック」</b> をダブルクリック。</div>
+<div class="card">
+  📥 <b>はじめて入れたとき「読み取れませんでした」と出たら</b><br>
+  apomiは、ご利用の予約システムに合わせた<b>「取り込み設定」</b>という小さなファイルを使って
+  予約一覧を読みます。<br>
+  <span class="sub">Genifixの印刷PDF・アポツール・EPARK歯科台帳は、はじめから読めます。
+  それ以外のシステムをお使いの場合は、<b>こちらで設定をお作りしてお渡しします</b>（無料）。<br>
+  書き出したファイルを1つ <b>apomi.dental@gmail.com</b> までお送りください
+  （患者さんのお名前は消していただいて構いません）。2営業日以内にお返しします。</span>
+</div>
 <div class="card">
   🗓️ <b>シフト表CSV</b>（アポツール対応）も同じフォルダに入れるだけで、
   <b>「担当が休みなのに予約」「休診日に予約」</b>まで自動チェックに加わります。<br>
