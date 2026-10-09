@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>歯科医院の空き枠は月いくら？ 売れ残り金額の計算｜apomi</title>
+<meta name="description" content="歯科医院の空き枠は月いくら売れ残っている？ 診療時間・チェアの台数・診療日数・埋まり率を入れると、空いている時間を金額に直して表示します。登録不要・無料。">
+<link rel="canonical" href="https://apomi.jp/keisan.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="apomi（アポミ）">
+<meta property="og:title" content="歯科医院の空き枠は月いくら？ 売れ残り金額の計算｜apomi">
+<meta property="og:description" content="歯科医院の空き枠は月いくら売れ残っている？ 診療時間・チェアの台数・診療日数・埋まり率を入れると、空いている時間を金額に直して表示します。登録不要・無料。">
+<meta property="og:url" content="https://apomi.jp/keisan.html">
+<meta property="og:image" content="https://apomi.jp/apomi_og.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@apomi_jp">
+<style>
+ :root{--mint:#eefaf6;--mint2:#d7f2e8;--green:#2fa27a;--green-d:#1f7d5e;--leaf:#7cc6a6;
+   --ink:#274b40;--sub:#48685c;--line:#cfe8dd;--amber:#e2953b;--cream:#fff6e6;--bg:#fff;--card:#fff}
+ @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+   --mint:#16302a;--mint2:#1c3a32;--green:#4cc39a;--green-d:#7fd8b6;--leaf:#3f8f70;
+   --ink:#e3efe9;--sub:#b3c9bf;--line:#2c4a40;--amber:#f0aa5a;--cream:#33291a;--bg:#0f1f1a;--card:#14271f}}
+ :root[data-theme="dark"]{--mint:#16302a;--mint2:#1c3a32;--green:#4cc39a;--green-d:#7fd8b6;--leaf:#3f8f70;
+   --ink:#e3efe9;--sub:#b3c9bf;--line:#2c4a40;--amber:#f0aa5a;--cream:#33291a;--bg:#0f1f1a;--card:#14271f}
+ *{box-sizing:border-box}
+ body{font-family:-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);
+   background:var(--bg);margin:0;line-height:1.85}
+ .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+ header{background:linear-gradient(150deg,var(--mint2),var(--mint) 60%,var(--cream));border-bottom:3px solid var(--leaf);
+   padding:34px 0 28px}
+ .brand{font-weight:900;color:var(--green-d);letter-spacing:.08em;text-decoration:none}
+ h1{font-size:26px;line-height:1.45;margin:8px 0 6px}
+ .lead{color:var(--sub);margin:0}
+ h2{font-size:19px;color:var(--green-d);margin:34px 0 10px;border-left:6px solid var(--green);padding-left:10px}
+ .card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+ @media (max-width:560px){.grid{grid-template-columns:1fr}}
+ label{display:block;font-weight:700;font-size:15px}
+ .hint{font-size:12.5px;color:var(--sub);font-weight:400;display:block}
+ .inp{display:flex;align-items:center;gap:6px;margin-top:4px}
+ input[type=number]{width:100%;max-width:160px;font-size:18px;padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;
+   background:var(--bg);color:var(--ink)}
+ .result{background:linear-gradient(150deg,var(--cream),var(--mint));border:2px solid var(--amber);border-radius:16px;padding:18px;margin:18px 0;text-align:center}
+ .big{font-size:40px;font-weight:900;color:var(--amber);line-height:1.2;margin:4px 0;font-variant-numeric:tabular-nums}
+ .rows{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+ @media (max-width:560px){.rows{grid-template-columns:1fr}}
+ .rows div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px}
+ .rows b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+ .rows span{font-size:12.5px;color:var(--sub)}
+ .up{margin-top:12px;font-size:15px}
+ .note{font-size:13px;color:var(--sub)}
+ a.btn{display:inline-block;text-decoration:none;font-weight:800;border-radius:14px;padding:13px 22px;font-size:16px;
+   background:var(--green);color:#fff;margin:6px 4px}
+ a.btn.sub{background:transparent;color:var(--green-d);border:2px solid var(--green)}
+ table{border-collapse:collapse;width:100%;font-size:15px}
+ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+ th{background:var(--mint)}
+ td.n{text-align:right;font-variant-numeric:tabular-nums}
+ footer{margin-top:40px;padding:22px 0 30px;border-top:1px solid var(--line);font-size:13px;color:var(--sub);text-align:center}
+ footer a{color:var(--green-d)}
+</style></head><body>
+
+<header><div class="wrap">
+<a class="brand" href="https://apomi.jp/">apomi</a>
+<h1>歯科医院の空き枠は、月いくら売れ残っている？</h1>
+<p class="lead">予約枠は「在庫」です。埋まらなかった時間は、あとから売ることができません。<br>
+4つの数字を入れると、空いている時間を金額に直して表示します。</p>
+</div></header>
+
+<main class="wrap">
+<h2>売れ残り金額の計算</h2>
+<div class="card">
+<div class="grid">
+ <label>1日の診療時間
+  <span class="hint">昼休みを除いた、予約を入れられる時間</span>
+  <span class="inp"><input type="number" id="hours" min="0" max="24" step="0.5" value="8"> 時間</span></label>
+ <label>チェア（ユニット）の台数
+  <span class="hint">予約を入れているチェアの数</span>
+  <span class="inp"><input type="number" id="chairs" min="1" max="50" step="1" value="5"> 台</span></label>
+ <label>月の診療日数
+  <span class="inp"><input type="number" id="days" min="1" max="31" step="1" value="20"> 日</span></label>
+ <label>予約の埋まり率
+  <span class="hint">予約が入っている時間 ÷ 予約を入れられる時間</span>
+  <span class="inp"><input type="number" id="rate" min="0" max="100" step="1" value="80"> ％</span></label>
+ <label>チェア1台・1時間あたりの売上
+  <span class="hint">初期値は全国平均の目安。自院の数字は「月の医業収入 ÷（1日の診療時間×台数×診療日数）」で出せます</span>
+  <span class="inp"><input type="number" id="price" min="0" step="100" value="8000"> 円</span></label>
+</div>
+</div>
+
+<div class="result" aria-live="polite">
+ <div>1か月の売れ残り（空き枠の金額）</div>
+ <div class="big" id="outMonth">—</div>
+ <div class="rows">
+  <div><span>空いている時間（月）</span><b id="outFree">—</b></div>
+  <div><span>1日あたり</span><b id="outDay">—</b></div>
+  <div><span>1年にすると</span><b id="outYear">—</b></div>
+ </div>
+ <div class="up" id="outUp"></div>
+</div>
+<p class="note">※ 計算結果は目安です。実際の売上や利益を約束するものではありません。経営の判断は、医院の実際の数字をもとに行ってください。<br>
+※ 全国平均の目安（8,000円）は、第24回医療経済実態調査をもとにした概算です。<br>
+※ 入れた数字はこのページの中だけで計算し、どこにも送りません。</p>
+
+<h2>計算のしかた</h2>
+<table>
+<tr><th>項目</th><th>計算</th></tr>
+<tr><td>予約を入れられる時間（月）</td><td>1日の診療時間 × チェアの台数 × 月の診療日数</td></tr>
+<tr><td>空いている時間（月）</td><td>予約を入れられる時間 ×（100％ − 埋まり率）</td></tr>
+<tr><td>売れ残り金額（月）</td><td>空いている時間 × チェア1台・1時間あたりの売上</td></tr>
+</table>
+
+<h2>ある歯科医院の実際の数字</h2>
+<p>このページを作った群馬の歯科医院（apomiの開発元）の、2026年9月の数字です。</p>
+<table>
+<tr><th>項目</th><th>9月</th></tr>
+<tr><td>診療日数</td><td class="n">19日</td></tr>
+<tr><td>予約の件数</td><td class="n">1,646件</td></tr>
+<tr><td>埋まり率</td><td class="n">82.7％</td></tr>
+<tr><td>空いている時間</td><td class="n">155.25時間</td></tr>
+<tr><td>売れ残り金額（全国平均の単価で計算）</td><td class="n">約124万円</td></tr>
+</table>
+<p>8割以上埋まっていても、月に155時間ぶんの空きがありました。
+数字で見るまでは「けっこう埋まっている」という感覚でした。</p>
+
+<h2>自院の本当の数字を出すには</h2>
+<p>埋まり率を正確に出すには、予約の一つひとつの長さとチェアを数える必要があり、手で計算するのはたいへんです。
+<b>apomi（アポミ）</b>は、予約ソフトから書き出した予約一覧を読んで、空き時間・埋まり率・売れ残り金額を自動で出します。
+二重予約や入れ間違いのチェックも同時に行います。</p>
+<p style="text-align:center">
+<a class="btn" href="https://apomi.jp/trial.html">お試し版で、自院の予約一覧から出す</a>
+<a class="btn sub" href="https://apomi.jp/">apomiについて</a></p>
+<p class="note" style="text-align:center">お試し版はインストール不要・無料です。予約一覧（CSV・Excel）はブラウザの中だけで処理し、外には送りません。</p>
+</main>
+
+<footer><div class="wrap">
+<div><b>apomi（アポミ）</b> ｜ 開発・提供：いいづか歯科医院</div>
+<div>お問い合わせ：apomi.dental@gmail.com ／ 050-1809-0279（平日10:00〜16:00）</div>
+<div><a href="https://apomi.jp/">トップ</a> ｜ <a href="https://apomi.jp/qa.html">よくある質問</a> ｜ <a href="https://apomi.jp/taiou.html">予約管理ソフトの対応状況</a> ｜ <a href="https://apomi.jp/kiyaku.html">利用規約</a></div>
+</div></footer>
+
+<script>
+(function () {
+  function num(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) && v >= 0 ? v : 0;
+  }
+  function yen(v) {
+    if (v >= 100000000) return '約' + (Math.round(v / 1000000) / 100).toLocaleString('ja-JP') + '億円';
+    if (v >= 10000) return '約' + Math.round(v / 10000).toLocaleString('ja-JP') + '万円';
+    return Math.round(v).toLocaleString('ja-JP') + '円';
+  }
+  function hrs(v) {
+    return (Math.round(v * 10) / 10).toLocaleString('ja-JP') + '時間';
+  }
+  function calc() {
+    var hours = num('hours'), chairs = num('chairs'), days = num('days');
+    var rate = Math.min(num('rate'), 100), price = num('price');
+    var cap = hours * chairs * days;
+    var free = cap * (100 - rate) / 100;
+    var month = free * price;
+    document.getElementById('outMonth').textContent = yen(month);
+    document.getElementById('outFree').textContent = hrs(free);
+    document.getElementById('outDay').textContent = days > 0 ? yen(month / days) : '—';
+    document.getElementById('outYear').textContent = yen(month * 12);
+    var up = document.getElementById('outUp');
+    if (rate < 100 && cap > 0 && price > 0) {
+      var step = Math.min(5, 100 - rate);
+      up.textContent = '埋まり率を' + step + '％上げると、月に' + yen(cap * step / 100 * price) + '（空き' + hrs(cap * step / 100) + 'ぶん）が売上に変わる計算です。';
+    } else {
+      up.textContent = '';
+    }
+  }
+  ['hours', 'chairs', 'days', 'rate', 'price'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', calc);
+  });
+  calc();
+})();
+</script>
+</body></html>
