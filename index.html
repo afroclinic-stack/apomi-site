@@ -72,6 +72,10 @@
  .dl .os{font-weight:900;font-size:17px;color:var(--green-d)}
  .dl p{font-size:13.5px;color:#48685c;margin:6px 0 12px}
  .soon{opacity:.65}
+ .movie{max-width:800px;margin:0 auto 22px}
+ .movie video{display:block;width:100%;height:auto;border-radius:14px;border:1.5px solid var(--line);
+   box-shadow:0 6px 18px rgba(47,162,122,.16);background:#e8f4f2}
+ .movie .cap{text-align:center;font-size:13.5px;color:#7c968c;margin-top:6px}
  .shots{display:grid;grid-template-columns:1fr;gap:18px;max-width:800px;margin:0 auto}
  .shots img{display:block;width:100%;height:auto;border-radius:14px;border:1.5px solid var(--line);
    box-shadow:0 6px 18px rgba(47,162,122,.12);background:#fff}
@@ -100,6 +104,12 @@
   <div class="wrap">
     <h2>画面で見るapomi</h2>
     <p class="sub2">実際の画面です。押すと大きく見られます（架空の医院・患者さんの見本データで作っています）。</p>
+    <div class="movie">
+      <video controls muted playsinline preload="none" poster="screens/apomi_demo_poster.jpg">
+        <source src="screens/apomi_demo.mp4" type="video/mp4">
+      </video>
+      <div class="cap">▶ 30秒でわかる使い方（音は出ません）</div>
+    </div>
     <div class="shots">
       <a href="screens/panel1.jpg" target="_blank" rel="noopener"><img src="screens/panel1.jpg" loading="lazy" alt="1. 予約一覧を、デスクトップに常駐するアポミちゃんの窓へドラッグするだけ。数秒で結果の画面が自動で開きます。"></a>
       <a href="screens/panel2.jpg" target="_blank" rel="noopener"><img src="screens/panel2.jpg" loading="lazy" alt="2. 見つけたミスは、どの日・何時・どのチェアの予約が、なぜおかしいのかを文章で表示します（担当者ダブルブッキング・患者二重予約・似た名前）。"></a>
