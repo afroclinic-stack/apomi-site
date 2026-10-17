@@ -72,6 +72,12 @@
  .dl .os{font-weight:900;font-size:17px;color:var(--green-d)}
  .dl p{font-size:13.5px;color:#48685c;margin:6px 0 12px}
  .soon{opacity:.65}
+ .shots{display:grid;grid-template-columns:1fr;gap:18px;max-width:800px;margin:0 auto}
+ .shots img{display:block;width:100%;height:auto;border-radius:14px;border:1.5px solid var(--line);
+   box-shadow:0 6px 18px rgba(47,162,122,.12);background:#fff}
+ .safe{max-width:800px;margin:22px auto 0;background:#fff;border:2px solid var(--leaf);border-radius:16px;
+   padding:14px 18px;font-size:14px;color:#48685c;line-height:1.75}
+ .safe b{color:var(--green-d)}
  footer{background:var(--ink);color:#cfe8dd;text-align:center;padding:26px 16px;font-size:12.5px;line-height:2}
  footer a{color:#9fd8c4}
  .foot-note{font-size:11.5px;color:#8fb3a6}
@@ -89,6 +95,24 @@
   </div>
   <div class="free">お試しはインストール不要・データはブラウザの中だけで処理されます</div>
 </div>
+
+<section class="alt" id="screens">
+  <div class="wrap">
+    <h2>画面で見るapomi</h2>
+    <p class="sub2">実際の画面です。押すと大きく見られます（架空の医院・患者さんの見本データで作っています）。</p>
+    <div class="shots">
+      <a href="screens/panel1.jpg" target="_blank" rel="noopener"><img src="screens/panel1.jpg" loading="lazy" alt="1. 予約一覧を、デスクトップに常駐するアポミちゃんの窓へドラッグするだけ。数秒で結果の画面が自動で開きます。"></a>
+      <a href="screens/panel2.jpg" target="_blank" rel="noopener"><img src="screens/panel2.jpg" loading="lazy" alt="2. 見つけたミスは、どの日・何時・どのチェアの予約が、なぜおかしいのかを文章で表示します（担当者ダブルブッキング・患者二重予約・似た名前）。"></a>
+      <a href="screens/panel3.jpg" target="_blank" rel="noopener"><img src="screens/panel3.jpg" loading="lazy" alt="3. 空き枠は売れ残り。月ごとに埋まり率・空き時間・売れ残り金額をまとめます。"></a>
+      <a href="screens/panel4.jpg" target="_blank" rel="noopener"><img src="screens/panel4.jpg" loading="lazy" alt="4. 毎朝、今日チェックする期間を画面でお知らせします（毎日1週間先・週初め1か月先・月初4か月先）。"></a>
+    </div>
+    <div class="safe">🔒 <b>予約データ・患者さんの情報が、外に漏れることは一切ありません。</b><br>
+      apomiは医院のパソコンの中だけで動きます。データを外部へ送ることも、当社がデータを抜き出すことも、もちろんありません。</div>
+    <div style="text-align:center;margin-top:20px">
+      <a class="btn sub" href="screens/apomi_flyer.pdf" target="_blank" rel="noopener">📄 チラシ（A4・PDF）をひらく</a>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
